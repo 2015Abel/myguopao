@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 import org.user.api.entity.User;
 import org.user.api.service.UserService;
 
@@ -29,6 +28,7 @@ public class UserController {
 	
 	@PostMapping("/user/save")
 	public User addUser(@RequestParam String name){
+		System.out.println(">>>>>>>>>>>>>Provider Server1 method");
 		User user = new User();
 		user.setName(name);
 		if(userServiceImpl.addUser(user)){
@@ -40,6 +40,7 @@ public class UserController {
 	
 	@GetMapping("/user/list")
 	public Collection<User> getUsers(){
+		System.out.println(">>>>>>>>>>>>>Provider Server1 method");
 		return userServiceImpl.findAll();
 	}
 }

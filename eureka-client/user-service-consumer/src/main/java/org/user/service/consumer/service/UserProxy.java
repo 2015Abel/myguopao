@@ -6,8 +6,6 @@ package org.user.service.consumer.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.RequestEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.user.api.entity.User;
@@ -32,7 +30,6 @@ public class UserProxy implements UserService {
 
 	    @Override
 	    public boolean addUser(User user) {
-	    	String name = user.getName();
 	        User returnValue =
 	                restTemplate.postForObject(PROVIDER_SERVER_URL_PREFIX+"/user/save?name={name}", null, User.class,user.getName());
 	        return returnValue != null;

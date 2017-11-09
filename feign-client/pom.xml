@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>feign-client</name>
+	<name>feign-demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
